@@ -1,26 +1,173 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/*
+  Design tokens — sourced from the "Realist" design-language teardown.
+  Every value below traces back to Section 13 (Design Tokens) of that guide.
+  Dark mode is intentionally not implemented: the guide explicitly lists
+  dark mode as an anti-pattern for this warm, editorial brand.
+*/
 
 @theme inline {
+  /* Surfaces */
+  --color-canvas: var(--canvas);
+  --color-canvas-alt: var(--canvas-alt);
+  --color-surface: var(--surface);
+
+  /* Text */
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-on-dark: var(--on-dark);
+
+  /* Brand */
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-primary-hover: var(--brand-primary-hover);
+  --color-brand-secondary: var(--brand-secondary);
+
+  /* Structure */
+  --color-line: var(--line);
+
+  /* Status */
+  --color-status-for-sale: var(--status-for-sale);
+  --color-status-for-rent: var(--status-for-rent);
+  --color-status-sold: var(--status-sold);
+  --color-status-success: var(--status-success);
+  --color-status-error: var(--status-error);
+
+  /* shadcn semantic mapping (kept in sync with the brand palette above) */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Typography */
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-sans: var(--font-jakarta), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* Radius */
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 1.5rem;
+  --radius-card: 1.25rem;
+  --radius-pill: 9999px;
+
+  /* Shadows */
+  --shadow-hover: 0 16px 40px rgba(30, 28, 24, 0.10);
+  --shadow-resting: none;
+
+  /* Easing (registers ease-out-expo / ease-standard utilities) */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Letter spacing */
+  --tracking-kicker: 0.12em;
+  --tracking-button: 0.08em;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  /* Brand palette */
+  --canvas: #FAF7F1;
+  --canvas-alt: #F1ECE2;
+  --surface: #FFFFFF;
+
+  --ink: #1E1C18;
+  --ink-muted: #6E6A60;
+  --on-dark: #FAF7F1;
+
+  --brand-primary: #3F4A36;
+  --brand-primary-hover: #333B2A;
+  --brand-secondary: #B1603A;
+
+  --line: #E5DFD2;
+
+  --status-for-sale: #3F4A36;
+  --status-for-rent: #8A8F73;
+  --status-sold: #9C968A;
+  --status-success: #4B7A51;
+  --status-error: #A24C3B;
+
+  /* shadcn semantic mapping */
+  --background: var(--canvas);
+  --foreground: var(--ink);
+  --card: var(--surface);
+  --card-foreground: var(--ink);
+  --popover: var(--surface);
+  --popover-foreground: var(--ink);
+  --primary: var(--brand-primary);
+  --primary-foreground: var(--on-dark);
+  --secondary: var(--canvas-alt);
+  --secondary-foreground: var(--ink);
+  --muted: var(--canvas-alt);
+  --muted-foreground: var(--ink-muted);
+  --accent: var(--brand-secondary);
+  --accent-foreground: var(--on-dark);
+  --destructive: var(--status-error);
+  --border: var(--line);
+  --input: var(--line);
+  --ring: var(--brand-primary);
+  --radius: 1.25rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply bg-canvas text-ink font-sans antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display text-ink;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .kicker {
+    @apply font-sans text-xs font-semibold uppercase tracking-kicker text-brand-primary;
+  }
+  .btn-label {
+    @apply font-sans text-[13.5px] font-semibold uppercase tracking-button;
+  }
+  .section-shell {
+    @apply mx-auto w-full max-w-[1280px] px-6 md:px-10;
+  }
+  .card-surface {
+    @apply bg-surface border border-line rounded-card;
+  }
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
 }

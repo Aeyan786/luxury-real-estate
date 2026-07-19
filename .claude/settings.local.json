@@ -3,7 +3,8 @@
     "allow": [
       "Bash(cd /tmp/ui-ux-pro-max-skill && find . -maxdepth 3 -not -path '*/.git*' | sort)",
       "Read(//tmp/**)",
-      "Bash(pwd -W)"
+      "Bash(pwd -W)",
+      "Bash(npx --yes shadcn@latest init -y -b neutral --force)"
     ]
   }
 }
