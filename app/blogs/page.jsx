@@ -5,7 +5,7 @@ import { BLOG_POSTS } from "@/lib/constants";
 
 export const metadata = {
   title: "Blogs",
-  description: "Market insight, buyer guides, and news from the Vebryx luxury marketplace.",
+  description: "Market insight, buyer guides, and news from the Luxora luxury marketplace.",
 };
 
 export default function BlogsPage() {
@@ -14,7 +14,7 @@ export default function BlogsPage() {
       <PageHero
         kicker="Journal"
         title="Insight for the world of extraordinary assets"
-        description="Buyer guides, market news, and verification standards from the Vebryx team and our agent network."
+        description="Buyer guides, market news, and verification standards from the Luxora team and our agent network."
       />
       <section className="py-16 md:py-24">
         <Container className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">

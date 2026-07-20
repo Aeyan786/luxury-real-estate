@@ -5,7 +5,7 @@ export const metadata = { title: "Cookie Policy" };
 const SECTIONS = [
   {
     heading: "What Cookies We Use",
-    body: "Vebryx uses essential cookies required for the site to function, along with analytics cookies that help us understand how the marketplace is used so we can improve it.",
+    body: "Luxora uses essential cookies required for the site to function, along with analytics cookies that help us understand how the marketplace is used so we can improve it.",
   },
   {
     heading: "Managing Cookies",
@@ -13,7 +13,7 @@ const SECTIONS = [
   },
   {
     heading: "Third-Party Cookies",
-    body: "We do not permit third-party advertising cookies on Vebryx. Any embedded content (such as maps) may set its own cookies under its own policy.",
+    body: "We do not permit third-party advertising cookies on Luxora. Any embedded content (such as maps) may set its own cookies under its own policy.",
   },
 ];
 

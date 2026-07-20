@@ -5,7 +5,7 @@ import { ListingsBrowser } from "@/components/listings/ListingsBrowser";
 export const metadata = {
   title: "Listings",
   description:
-    "Browse verified luxury properties, private jets, luxury cars, super yachts, and fine watches on Vebryx.",
+    "Browse verified luxury properties, private jets, luxury cars, super yachts, and fine watches on Luxora.",
 };
 
 export default function ListingsPage() {

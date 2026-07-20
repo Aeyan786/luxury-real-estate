@@ -3,7 +3,7 @@ import { AgentsBrowser } from "@/components/agents/AgentsBrowser";
 
 export const metadata = {
   title: "Agents",
-  description: "Meet the verified agents representing Vebryx's luxury marketplace worldwide.",
+  description: "Meet the verified agents representing Luxora's luxury marketplace worldwide.",
 };
 
 export default function AgentsPage() {
@@ -12,7 +12,7 @@ export default function AgentsPage() {
       <PageHero
         kicker="Our Network"
         title="Verified agents, worldwide"
-        description="Every Vebryx agent is identity- and license-verified before their profile goes live, so you always know who you're working with."
+        description="Every Luxora agent is identity- and license-verified before their profile goes live, so you always know who you're working with."
       />
       <AgentsBrowser />
     </>

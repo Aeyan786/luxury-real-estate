@@ -7,19 +7,40 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { FaqContact } from "@/components/sections/FaqContact";
 import { CATEGORIES, CATEGORY_ITEMS } from "@/lib/constants";
 
+const PROPERTIES_CATEGORY = CATEGORIES.find((c) => c.slug === "properties");
+const OTHER_CATEGORIES = CATEGORIES.filter((c) => c.slug !== "properties");
+
+// Jets, Cars, Yachts, and Watches are consolidated into a single "More
+// Collections" section on the homepage — one flagship item per category,
+// one shared "View All" button — rather than four near-identical sections
+// back to back.
+const COLLECTIONS_CATEGORY = {
+  kicker: "More Collections",
+  label: "Jets, Cars, Yachts & Watches",
+  description:
+    "Beyond real estate — aviation, automotive, marine, and horology, all held to the same verification standard.",
+  href: "/listings",
+};
+const COLLECTIONS_ITEMS = OTHER_CATEGORIES.map((category) => ({
+  ...CATEGORY_ITEMS[category.slug][0],
+  category: category.slug,
+}));
+
 export default function HomePage() {
   return (
     <>
       <Hero />
 
-      {CATEGORIES.map((category, index) => (
-        <CategoryShowcase
-          key={category.slug}
-          category={category}
-          items={CATEGORY_ITEMS[category.slug]}
-          alt={index % 2 === 1}
-        />
-      ))}
+      <CategoryShowcase
+        category={PROPERTIES_CATEGORY}
+        items={CATEGORY_ITEMS.properties}
+        alt={false}
+      />
+      <CategoryShowcase
+        category={COLLECTIONS_CATEGORY}
+        items={COLLECTIONS_ITEMS}
+        alt={true}
+      />
 
       <WhyJoin />
       <Membership />

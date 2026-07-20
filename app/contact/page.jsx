@@ -5,11 +5,11 @@ import { PageHero } from "@/components/shared/PageHero";
 
 export const metadata = {
   title: "Contact",
-  description: "Get in touch with the Vebryx team — general inquiries, agent introductions, and support.",
+  description: "Get in touch with the Luxora team — general inquiries, agent introductions, and support.",
 };
 
 const CONTACT_DETAILS = [
-  { icon: Mail, label: "Email", value: "hello@vebryx.com", href: "mailto:hello@vebryx.com" },
+  { icon: Mail, label: "Email", value: "hello@luxora.com", href: "mailto:hello@luxora.com" },
   { icon: Phone, label: "Phone", value: "+1 (305) 555-0199", href: "tel:+13055550199" },
   { icon: MapPin, label: "Headquarters", value: "Miami, FL · London, UK · Dubai, UAE" },
 ];
@@ -50,7 +50,7 @@ export default function ContactPage() {
             </div>
             <div className="relative aspect-video w-full overflow-hidden rounded-card">
               <iframe
-                title="Vebryx headquarters map"
+                title="Luxora headquarters map"
                 src="https://www.openstreetmap.org/export/embed.html?bbox=-80.30%2C25.70%2C-80.10%2C25.85&layer=mapnik"
                 className="h-full w-full border-0"
                 loading="lazy"

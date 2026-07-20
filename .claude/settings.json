@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -sIL \"https://loremflickr.com/1200/900/ferrari,supercar\")"
+    ]
+  }
+}

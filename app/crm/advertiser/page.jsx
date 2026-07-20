@@ -2,7 +2,7 @@ import { CrmComingSoon } from "@/components/crm/CrmComingSoon";
 
 export const metadata = {
   title: "Become an Advertiser",
-  description: "Advertise to a verified, high-intent luxury audience on Vebryx.",
+  description: "Advertise to a verified, high-intent luxury audience on Luxora.",
 };
 
 const ADVERTISER_BENEFITS = [

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Mail, Phone } from "lucide-react";
 import { cardHover, imageZoom } from "@/lib/animations";
+import { resolveHref } from "@/lib/utils";
 
 export function AgentCard({ agent }) {
   return (
@@ -48,7 +49,7 @@ export function AgentCard({ agent }) {
           </a>
         </div>
         <a
-          href={`/agents/${agent.id}`}
+          href={resolveHref(`/agents/${agent.id}`)}
           className="btn-label mt-3 text-[12px] text-brand-primary underline-offset-4 hover:underline"
         >
           View agent details

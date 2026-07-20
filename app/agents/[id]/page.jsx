@@ -5,6 +5,7 @@ import { ArrowLeft, Mail, MapPin, Phone } from "lucide-react";
 import { Container } from "@/components/shared/Container";
 import { ContactForm } from "@/components/shared/ContactForm";
 import { AGENTS } from "@/lib/constants";
+import { resolveHref } from "@/lib/utils";
 
 export function generateStaticParams() {
   return AGENTS.map((agent) => ({ id: agent.id }));
@@ -28,7 +29,7 @@ export default async function AgentDetailPage({ params }) {
   return (
     <Container className="flex flex-col gap-10 py-16 md:py-24">
       <Link
-        href="/agents"
+        href={resolveHref("/agents")}
         className="flex w-fit items-center gap-2 text-sm font-medium text-ink-muted transition-colors duration-200 ease-standard hover:text-brand-primary"
       >
         <ArrowLeft className="size-4" strokeWidth={1.75} />
@@ -59,7 +60,7 @@ export default async function AgentDetailPage({ params }) {
           </div>
 
           <p className="leading-relaxed text-ink-muted">
-            {agent.name} is a Vebryx-verified agent specializing in {agent.specialty.toLowerCase()},
+            {agent.name} is a Luxora-verified agent specializing in {agent.specialty.toLowerCase()},
             representing buyers and sellers across {agent.location} and beyond. Every
             engagement begins with a private consultation to understand exactly what
             you&rsquo;re looking for before any listing is shared.

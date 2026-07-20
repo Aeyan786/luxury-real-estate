@@ -9,7 +9,7 @@ import { MEMBERSHIPS, WHY_JOIN } from "@/lib/constants";
 export const metadata = {
   title: "Partners",
   description:
-    "Become a Vebryx Partner — unlimited listings, featured placement, and a verified badge for agencies and brands.",
+    "Become a Luxora Partner — unlimited listings, featured placement, and a verified badge for agencies and brands.",
 };
 
 const partnerMembership = MEMBERSHIPS.find((m) => m.id === "partner");

@@ -9,7 +9,7 @@ import { WHY_JOIN } from "@/lib/constants";
 export const metadata = {
   title: "About",
   description:
-    "Vebryx is a curated global marketplace connecting verified buyers, agents, and partners across luxury real estate, aviation, automotive, marine, and horology.",
+    "Luxora is a curated global marketplace connecting verified buyers, agents, and partners across luxury real estate, aviation, automotive, marine, and horology.",
 };
 
 const STATS = [
@@ -23,17 +23,17 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        kicker="About Vebryx"
+        kicker="About Luxora"
         title="A marketplace built on verification, not volume"
-        description="We started Vebryx because the luxury asset market deserved the same transparency buyers expect everywhere else — a single, trustworthy place to buy, sell, and discover extraordinary things."
+        description="We started Luxora because the luxury asset market deserved the same transparency buyers expect everywhere else — a single, trustworthy place to buy, sell, and discover extraordinary things."
       />
 
       <section className="py-24 md:py-36">
         <Container className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           <div className="relative aspect-[4/5] overflow-hidden rounded-card">
             <Image
-              src="https://picsum.photos/seed/vebryx-about/900/1100"
-              alt="Vebryx team"
+              src="https://picsum.photos/seed/luxora-about/900/1100"
+              alt="Luxora team"
               fill
               sizes="(min-width: 1024px) 45vw, 100vw"
               className="object-cover"
@@ -45,7 +45,7 @@ export default function AboutPage() {
               Connect discerning buyers with verified sellers — nothing else.
             </h2>
             <p className="leading-relaxed text-ink-muted">
-              Every listing on Vebryx, from a private island to a provenance-verified
+              Every listing on Luxora, from a private island to a provenance-verified
               timepiece, passes through the same review before it goes live. Every
               agent and partner is identity-checked. That standard is the entire
               product — not a feature bolted onto a generic classifieds site.

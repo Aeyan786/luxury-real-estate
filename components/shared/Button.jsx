@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { cva } from "class-variance-authority";
 import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
+import { cn, resolveHref } from "@/lib/utils";
 import { buttonHover } from "@/lib/animations";
 
 // The site's single reusable CTA button, matching Section 7 of the design
@@ -46,7 +46,7 @@ export function Button({
   const classes = cn(buttonVariants({ variant, size, className }));
 
   const Comp = as || (href ? Link : "button");
-  const compProps = href ? { href } : {};
+  const compProps = href ? { href: resolveHref(href) } : {};
 
   return (
     <motion.div

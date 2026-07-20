@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { cardHover, imageZoom } from "@/lib/animations";
+import { resolveHref } from "@/lib/utils";
 
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
   month: "long",
@@ -19,7 +20,7 @@ export function BlogCard({ post }) {
       variants={cardHover}
       className="card-surface overflow-hidden"
     >
-      <a href={`/blogs/${post.id}`} className="block">
+      <a href={resolveHref(`/blogs/${post.id}`)} className="block">
         <div className="relative aspect-[16/10] overflow-hidden">
           <motion.div variants={imageZoom} className="h-full w-full">
             <Image

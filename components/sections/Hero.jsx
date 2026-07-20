@@ -10,8 +10,15 @@ import { Kicker } from "@/components/shared/Kicker";
 import { Input } from "@/components/ui/input";
 import { CATEGORIES } from "@/lib/constants";
 import { EASE_OUT_EXPO, fadeUp, staggerContainer } from "@/lib/animations";
+import { resolveHref } from "@/lib/utils";
 
-const WORDS = ["properties.", "private jets.", "luxury cars.", "super yachts.", "fine watches."];
+const WORDS = [
+  "properties.",
+  "private jets.",
+  "luxury cars.",
+  "super yachts.",
+  "fine watches.",
+];
 
 export function Hero() {
   const [wordIndex, setWordIndex] = useState(0);
@@ -31,24 +38,24 @@ export function Hero() {
     const params = new URLSearchParams();
     params.set("category", category);
     if (query) params.set("q", query);
-    router.push(`/listings?${params.toString()}`);
+    router.push(resolveHref(`/listings?${params.toString()}`));
   }
 
   return (
     <section className="relative overflow-hidden bg-ink">
       <div className="absolute inset-0">
         <video
-          src="/herogif.mp4"
-          alt="Extraordinary assets curated by Vebryx"
+          src="/aivideo(1).mp4"
+          alt="Extraordinary assets curated by Luxora"
           autoPlay
-  muted
-  loop
-  playsInline
-  preload="auto"
+          muted
+          loop
+          playsInline
+          preload="auto"
           sizes="100vw"
-          className="object-cover opacity-70"
+          className="h-full w-full object-cover opacity-70"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/60 to-ink/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-ink/10" />
       </div>
 
       <motion.div
@@ -75,7 +82,7 @@ export function Hero() {
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -40, opacity: 0 }}
                 transition={{ duration: 0.5, ease: EASE_OUT_EXPO }}
-                className="italic text-[#F59E0B] pb-2"
+                className="italic text-[#f9c803] pb-2"
               >
                 {WORDS[wordIndex]}
               </motion.span>
@@ -83,10 +90,13 @@ export function Hero() {
           </span>
         </motion.h1>
 
-        <motion.p variants={fadeUp} className="max-w-xl text-lg leading-relaxed text-on-dark/80">
-          Vebryx connects discerning buyers with verified sellers, agents,
-          and partners across the world&rsquo;s most extraordinary assets —
-          one curated, trustworthy marketplace.
+        <motion.p
+          variants={fadeUp}
+          className="max-w-xl text-lg leading-relaxed text-on-dark/80"
+        >
+          Luxora connects discerning buyers with verified sellers, agents, and
+          partners across the world&rsquo;s most extraordinary assets — one
+          curated, trustworthy marketplace.
         </motion.p>
 
         <motion.form
@@ -125,7 +135,9 @@ export function Hero() {
           ].map(([stat, label]) => (
             <div key={label}>
               <p className="font-display text-3xl text-on-dark">{stat}</p>
-              <p className="text-xs uppercase tracking-kicker text-on-dark/70">{label}</p>
+              <p className="text-xs uppercase tracking-kicker text-on-dark/70">
+                {label}
+              </p>
             </div>
           ))}
         </motion.div>

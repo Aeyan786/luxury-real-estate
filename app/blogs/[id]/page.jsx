@@ -5,6 +5,7 @@ import { ArrowLeft } from "lucide-react";
 import { BlogCard } from "@/components/cards/BlogCard";
 import { Container } from "@/components/shared/Container";
 import { BLOG_POSTS } from "@/lib/constants";
+import { resolveHref } from "@/lib/utils";
 
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
   month: "long",
@@ -39,7 +40,7 @@ export default async function BlogDetailPage({ params }) {
 
       <Container className="flex max-w-3xl flex-col gap-8 py-12 md:py-20">
         <Link
-          href="/blogs"
+          href={resolveHref("/blogs")}
           className="flex w-fit items-center gap-2 text-sm font-medium text-ink-muted transition-colors duration-200 ease-standard hover:text-brand-primary"
         >
           <ArrowLeft className="size-4" strokeWidth={1.75} />
@@ -66,7 +67,7 @@ export default async function BlogDetailPage({ params }) {
             their financial lives.
           </p>
           <p>
-            That&rsquo;s the throughline across everything we cover in the Vebryx
+            That&rsquo;s the throughline across everything we cover in the Luxora
             Journal: verification, provenance, and access. Every listing on the
             platform is reviewed before it&rsquo;s published, every agent is
             identity-checked, and every category — from private islands to
@@ -74,7 +75,7 @@ export default async function BlogDetailPage({ params }) {
           </p>
           <p>
             Full analysis, sourcing, and interviews for this story are available to
-            registered members. Reach out to your Vebryx agent for the complete
+            registered members. Reach out to your Luxora agent for the complete
             report.
           </p>
         </div>

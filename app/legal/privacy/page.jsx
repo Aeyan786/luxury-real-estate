@@ -17,11 +17,11 @@ const SECTIONS = [
   },
   {
     heading: "Your Rights",
-    body: "You may request access to, correction of, or deletion of your personal data at any time by contacting hello@vebryx.com.",
+    body: "You may request access to, correction of, or deletion of your personal data at any time by contacting hello@luxora.com.",
   },
   {
     heading: "Contact",
-    body: "Questions about this policy can be directed to hello@vebryx.com.",
+    body: "Questions about this policy can be directed to hello@luxora.com.",
   },
 ];
 

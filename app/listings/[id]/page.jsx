@@ -7,6 +7,7 @@ import { Container } from "@/components/shared/Container";
 import { ContactForm } from "@/components/shared/ContactForm";
 import { Tag } from "@/components/shared/Tag";
 import { CATEGORIES, CATEGORY_ITEMS } from "@/lib/constants";
+import { resolveHref } from "@/lib/utils";
 
 const ALL_ITEMS = CATEGORIES.flatMap((category) =>
   CATEGORY_ITEMS[category.slug].map((item) => ({ ...item, category: category.slug }))
@@ -54,7 +55,7 @@ export default async function ListingDetailPage({ params }) {
 
       <Container className="flex flex-col gap-12 py-12 md:py-20">
         <Link
-          href={category?.href ?? "/listings"}
+          href={resolveHref(category?.href ?? "/listings")}
           className="flex w-fit items-center gap-2 text-sm font-medium text-ink-muted transition-colors duration-200 ease-standard hover:text-brand-primary"
         >
           <ArrowLeft className="size-4" strokeWidth={1.75} />
@@ -98,15 +99,15 @@ export default async function ListingDetailPage({ params }) {
             <div className="flex flex-col gap-4">
               <h2 className="font-display text-2xl text-ink">About this {category?.singular?.toLowerCase()}</h2>
               <p className="leading-relaxed text-ink-muted">
-                {item.title} represents the standard Vebryx holds every listing to:
+                {item.title} represents the standard Luxora holds every listing to:
                 independently verified provenance, editorial-quality presentation, and
                 direct access to a genuinely qualified buyer network. Full documentation,
                 inspection reports, and provenance records are available to verified
-                buyers upon request through your assigned Vebryx agent.
+                buyers upon request through your assigned Luxora agent.
               </p>
               <p className="leading-relaxed text-ink-muted">
                 Located in {item.location}, this {category?.singular?.toLowerCase()} is
-                represented by a Vebryx-verified agent who can arrange a private viewing,
+                represented by a Luxora-verified agent who can arrange a private viewing,
                 answer specification questions, and guide you through every stage of the
                 transaction.
               </p>

@@ -27,7 +27,7 @@ export function MembershipCard({ membership }) {
             Most Popular
           </span>
         )}
-        <h3 className="font-display text-2xl">{title}</h3>
+        <h3 className={`${featured ? "text-white" : "font-display"}  text-2xl`}>{title}</h3>
         <div className="mt-4 flex items-baseline gap-2">
           <span className="font-display text-4xl">{price}</span>
         </div>

@@ -34,7 +34,7 @@ export function ContactForm({ className }) {
         <CheckCircle2 className="size-10 text-status-success" strokeWidth={1.5} />
         <h3 className="font-display text-xl text-ink">Message sent</h3>
         <p className="text-sm text-ink-muted">
-          A member of the Vebryx team will be in touch shortly.
+          A member of the Luxora team will be in touch shortly.
         </p>
         <Button variant="secondary" size="sm" onClick={() => setStatus("idle")}>
           Send another message

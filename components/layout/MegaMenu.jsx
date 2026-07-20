@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import { SmartLink } from "@/components/shared/SmartLink";
 import { CATEGORIES } from "@/lib/constants";
 import { EASE_OUT_EXPO } from "@/lib/animations";
 
@@ -16,12 +16,12 @@ export function MegaMenu({ open, onClose }) {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -12 }}
           transition={{ duration: 0.3, ease: EASE_OUT_EXPO }}
-          className="absolute inset-x-0 top-full z-40 border-b border-line bg-surface shadow-hover"
+          className="absolute inset-x-0 top-full z-40 border-b border-line bg-[#FAF7F1] shadow-hover mt-1 rounded-xl"
           onMouseLeave={onClose}
         >
           <div className="section-shell grid grid-cols-2 gap-4 py-8 md:grid-cols-5">
             {CATEGORIES.map((category) => (
-              <Link
+              <SmartLink
                 key={category.slug}
                 href={category.href}
                 onClick={onClose}
@@ -50,7 +50,7 @@ export function MegaMenu({ open, onClose }) {
                     strokeWidth={1.5}
                   />
                 </div>
-              </Link>
+              </SmartLink>
             ))}
           </div>
         </motion.div>
