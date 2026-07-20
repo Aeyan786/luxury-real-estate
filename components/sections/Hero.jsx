@@ -37,11 +37,14 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden bg-ink">
       <div className="absolute inset-0">
-        <Image
-          src="/heroimage(1).jpg"
+        <video
+          src="/herogif.mp4"
           alt="Extraordinary assets curated by Vebryx"
-          fill
-          priority
+          autoPlay
+  muted
+  loop
+  playsInline
+  preload="auto"
           sizes="100vw"
           className="object-cover opacity-70"
         />
